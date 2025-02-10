@@ -1,0 +1,121 @@
+/* Основные стили для темной темы */
+body {
+    background-color: #121212; /* Темный фон */
+    color: #e0e0e0; /* Светлый текст */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden; /* Скрыть прокрутку, чтобы котики не выходили за пределы экрана */
+    position: relative;
+}
+
+h1 {
+    color: #ffffff; /* Белый цвет для заголовка */
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* Темный фон для формы */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1; /* Форма поверх котиков */
+}
+
+form p {
+    margin: 15px 0;
+}
+
+form label {
+    color: #e0e0e0; /* Светлый текст для меток */
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #333; /* Темный фон для полей ввода */
+    color: #e0e0e0; /* Светлый текст для полей ввода */
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: #555;
+    outline: none;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #6200ea; /* Фиолетовый цвет для кнопки */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #3700b3; /* Темный фиолетовый при наведении */
+}
+
+/* Анимация летающих котиков */
+@keyframes fly {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-100px) translateX(100px);
+    }
+    50% {
+        transform: translateY(50px) translateX(-100px);
+    }
+    75% {
+        transform: translateY(-150px) translateX(200px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+.cat {
+    position: absolute;
+    width: 80px; /* Увеличили размер котиков */
+    height: 80px; /* Увеличили размер котиков */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/616/616430.png'); /* Ссылка на иконку котика */
+    background-size: cover;
+    animation: fly 10s infinite ease-in-out;
+}
+
+/* Позиции котиков (чуть ниже середины экрана) */
+.cat1 {
+    top: 60%; /* Чуть ниже середины */
+    left: 10%;
+    animation-duration: 12s;
+}
+
+.cat2 {
+    top: 65%; /* Чуть ниже середины */
+    left: 50%;
+    animation-duration: 15s;
+}
+
+.cat3 {
+    top: 70%; /* Чуть ниже середины */
+    left: 20%;
+    animation-duration: 10s;
+}
+
+.cat4 {
+    top: 75%; /* Чуть ниже середины */
+    left: 80%;
+    animation-duration: 14s;
+}

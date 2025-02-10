@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/styl_regr.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+</head>
+<body>
+  <div class="background">
+    <div class="registration-container">
+      <h1>Регистрация</h1>
+      <form method="POST">
+        {% csrf_token %}
+        <label for="login">Логин (email):</label>
+        <input type="email" id="login" name="login" placeholder="Введите логин" required value="{{ form.login.value }}">
+
+        {% if form.login.errors %}
+          <div class="error">{{ form.login.errors }}</div>
+        {% endif %}
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+
+        {% if form.password.errors %}
+          <div class="error">{{ form.password.errors }}</div>
+        {% endif %}
+
+        <label for="confirm-password">Повторите пароль:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль" required>
+
+        {% if form.confirm_password.errors %}
+          <div class="error">{{ form.confirm_password.errors }}</div>
+        {% endif %}
+
+        <button type="submit">Регистрация</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
